@@ -19,12 +19,19 @@ import picocli.CommandLine.Parameters;
 @Slf4j
 public class Main implements Callable<Integer> {
 
+    private File ngramDir;
+
     public static void main(String[] args) {
+        int exitCode = new CommandLine(new Main()).execute(args);
+        System.exit(exitCode);
     }
 
     @Override
     public Integer call() {
         try {
+            if (ngramDir != null) {
+            }
+
             return 0;
 
         } catch (Exception e) {
